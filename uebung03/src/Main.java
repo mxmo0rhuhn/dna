@@ -37,7 +37,7 @@ class Main {
         // Java indexing - starts at 0
         int k = new Double(Math.ceil(list.size() / 2.0)).intValue();
 
-        Integer medianDerMediane = getMedian(list, print);
+        int medianDerMediane = getMedian(list, print);
 
         if (print) {
             System.out.print(medianDerMediane + " ");
@@ -119,11 +119,11 @@ class Main {
         ArrayList<Integer> mediane = new ArrayList<Integer>();
         for (ArrayList<Integer> cur : groups) {
             Collections.sort(cur);
-            Integer med = cur.get((new Double(Math.ceil((cur.size() - 1) / 2)).intValue()));
+            int med = cur.get((new Double(Math.ceil((cur.size() - 1) / 2)).intValue()));
             mediane.add(med);
         }
         if (print) {
-            for (Integer med : mediane) {
+            for (int med : mediane) {
                 System.out.print(med + " ");
             }
         }
@@ -143,7 +143,7 @@ class Main {
      * @param pivot pivot element
      * @return index of the pivot element
      */
-    private static int quickSelect(List<Integer> list, Integer pivot) {
+    private static int quickSelect(List<Integer> list, int pivot) {
 
         int leftIndex = 0;
         int rightIndex = list.size() - 1;
@@ -153,8 +153,8 @@ class Main {
         boolean leftNext = true;
         boolean rightNext = true;
 
-        Integer leftElement = 0;
-        Integer rightElement = 0;
+        int leftElement = 0;
+        int rightElement = 0;
         while (leftIndex <= rightIndex) {
             if (leftNext) {
                 leftElement = list.get(leftIndex);
@@ -212,4 +212,3 @@ class Main {
         return pivotIndex;
     }
 }
-
